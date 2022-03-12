@@ -3,11 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import vehicle_recalls from "../../app/src/reducers";
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+
+const store = createStore(vehicle_recalls);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+        <App />
+    </Provider>,
   document.getElementById('root')
 );
 

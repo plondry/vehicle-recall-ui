@@ -1,14 +1,25 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, {Component} from 'react';
 import './FieldEnhanceCard.css';
-import {Card, CardHeader, CardBody, Button, Label, Input, FormText, Form, FormGroup, Col} from "reactstrap";
+import {Card, CardHeader, CardBody, Button, Label, Input, Form, FormGroup, Col} from "reactstrap";
+import {getVehicleRecalls, postVehicleRecalls, searchVehicleRecalls} from "../../actions";
 
-//import {Card} from 'react-bootstrap'
-
-class FieldEnhanceCard extends React.Component {
-
+class FieldEnhanceCard extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            title: '',
+            baseUrl: '',
+        };
+    }
+
+    onAddFieldTask = ({ baseUrl })  => {
+        this.props.dispatch(postVehicleRecalls(baseUrl));
+    }
+    onGetListTask = ({ baseUrl }) => {
+        this.props.dispatch(getVehicleRecalls(baseUrl));
+    }
+    onSearchListTask = ({ baseUrl, value }) => {
+        this.props.dispatch(searchVehicleRecalls({baseUrl, value}));
     }
 
     render() {
@@ -19,7 +30,7 @@ class FieldEnhanceCard extends React.Component {
                     <Form>
                         <FormGroup row>
                             <Col>
-                                <Button color="primary">Add Field</Button>
+                                <Button color="primary" onClick={this.onAddFieldTask}>Add Field</Button>
                             </Col>
                             <Col>
                             </Col>
@@ -41,8 +52,6 @@ class FieldEnhanceCard extends React.Component {
             </Card>
         )
     }
-
-
 }
 
 export default FieldEnhanceCard;

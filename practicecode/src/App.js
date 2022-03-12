@@ -1,25 +1,11 @@
 import React, {Component} from 'react'
 import './App.css';
-import Axios from 'axios';
-import FieldEnhanceCard from "./components/FieldEnhanceCard/FieldEnhanceCard";
+import FieldEnhanceCard from "../../app/src/components/FieldEnhanceCard/FieldEnhanceCard";
 import {Container, Row, Col, Button, FormGroup, Label, Input, FormText} from "reactstrap";
-import JsonDisplayCard from "./components/JsonDisplayCard/JsonDisplayCard";
+import JsonDisplayCard from "../../app/src/components/JsonDisplayCard/JsonDisplayCard";
+import { connect } from 'react-redux';
 
 class App extends Component {
-
-  constructor(props) {
-      super(props);
-      this.state = {vehicleRecalls:null};
-  }
-
-  componentDidMount() {
-      Axios.get("http://localhost:3001/vehicle-recalls")
-          .then( res => {
-              console.log(res.data)
-              this.setState({vehicleRecalls: res.data})
-          })
-          .catch(err => console.log(err));
-  }
 
     render() {
       return (
@@ -72,4 +58,10 @@ class App extends Component {
     }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return {
+        vehicle_recalls: state.vehicle_recalls
+    }
+}
+
+export default connect(mapStateToProps)(App);
