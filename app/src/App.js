@@ -43,8 +43,7 @@ class App extends Component {
                       type="file"
                   />
                   <FormText>
-                    This is some placeholder block-level help text for the above input. It's a bit lighter and easily
-                    wraps to a new line.
+                    Load initial json file
                   </FormText>
                 </FormGroup>
               </Col>
