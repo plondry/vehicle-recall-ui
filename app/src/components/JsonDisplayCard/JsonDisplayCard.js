@@ -1,6 +1,7 @@
 import React from 'react';
 import './JsonDisplayCard.css';
-import {Card, CardBody, CardHeader} from "reactstrap";
+import {Card, CardBody, CardHeader, CardText} from "reactstrap";
+import ReactJson from "react-json-view";
 
 class JsonDisplayCard extends React.Component {
 
@@ -14,14 +15,12 @@ class JsonDisplayCard extends React.Component {
     }
 
     render() {
-        const jsonData = JSON.stringify(this.props.jsonData, null, 0)
-        console.log(jsonData);
         return (
-            <Card>
+            <Card className="left-align">
                 <CardHeader>{this.props.title}</CardHeader>
-                <CardBody>
-                    {jsonData}
-                </CardBody>
+                <CardText>
+                    <ReactJson src={this.props.jsonData} />
+                </CardText>
             </Card>
         )
     }

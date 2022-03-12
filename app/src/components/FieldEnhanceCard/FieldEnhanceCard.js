@@ -20,7 +20,12 @@ class FieldEnhanceCard extends Component {
                     <Form>
                         <FormGroup row>
                             <Col>
-                                <Button color="primary" onClick={this.props.handleAddField}>Add Field</Button>
+                                <Button color="primary"
+                                        onClick={(e) => {e.preventDefault();this.props.handleAddField(this.props.baseUrl);}}>Add Field</Button>
+                            </Col>
+                            <Col>
+                                <Button color="primary"
+                                        onClick={(e) => {e.preventDefault();this.props.handleGetList(this.props.baseUrl);}}>Reload Json</Button>
                             </Col>
                             <Col>
                             </Col>

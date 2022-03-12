@@ -10,12 +10,13 @@ const client = axios.create({
 });
 
 export function fetchVehicleRecalls() {
-    console.log("fetchVehicleRecalls")
     return client.get('/vehicle-recalls');
 }
 
 export function postVehicleRecallsWithURL(baseURL, data) {
-    console.log("fetchVehicleRecallsWithURL: " + baseURL)
     return axios.post(baseURL, data);
+}
 
+export function getVehicleRecallsWithURL(baseURL) {
+    return axios.get(baseURL);
 }

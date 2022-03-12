@@ -16,15 +16,13 @@ class App extends Component {
     this.props.dispatch(fetchInitialVehicleRecalls());
   }
 
-  onAddFieldTask = (e)  => {
-    e.preventDefault();
-    const baseUrl = "http://localhost:8080/v1/api/vehicle-recalls"
+  onAddFieldTask = (baseUrl)  => {
     this.props.dispatch(postVehicleRecalls(baseUrl, this.props.vehicle_recalls));
   }
-  onGetListTask = ({ baseUrl }) => {
+  onGetListTask = (baseUrl) => {
     this.props.dispatch(getVehicleRecalls(baseUrl));
   }
-  onSearchListTask = ({ baseUrl, value }) => {
+  onSearchListTask = (baseUrl, value) => {
     this.props.dispatch(searchVehicleRecalls({baseUrl, value}));
   }
 
@@ -53,17 +51,30 @@ class App extends Component {
             </Row>
             <Row>
               <Col>
-                <FieldEnhanceCard title="Manufacturer Recall No"  handleAddField={this.onAddFieldTask}/>
+                <FieldEnhanceCard
+                    title="Manufacturer Recall No"
+                    handleAddField={this.onAddFieldTask}
+                    handleGetList={this.onGetListTask}
+                    baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
+                />
               </Col>
             </Row>
             <Row>
               <Col>
-                <FieldEnhanceCard title="Category"  handleAddField={this.onAddFieldTask}/>
+                <FieldEnhanceCard
+                    title="Category"
+                    handleAddField={this.onAddFieldTask}
+                    baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
+                />
               </Col>
             </Row>
             <Row>
               <Col>
-                <FieldEnhanceCard title="System Types" handleAddField={this.onAddFieldTask}/>
+                <FieldEnhanceCard
+                    title="System Types"
+                    handleAddField={this.onAddFieldTask}
+                    baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
+                />
               </Col>
             </Row>
             <Row>
