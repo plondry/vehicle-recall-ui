@@ -5,7 +5,9 @@ import JsonDisplayCard from "./components/JsonDisplayCard/JsonDisplayCard";
 import {Container, Row, Col, Button, FormGroup, Label, Input, FormText} from "reactstrap";
 import {connect} from "react-redux";
 import {Component} from "react";
-import {fetchInitialVehicleRecalls} from "./actions";
+import {fetchInitialVehicleRecalls, getVehicleRecalls, postVehicleRecalls, searchVehicleRecalls} from "./actions";
+
+
 
 
 class App extends Component {
@@ -13,6 +15,20 @@ class App extends Component {
     console.log("componentDidMount");
     this.props.dispatch(fetchInitialVehicleRecalls());
   }
+
+  onAddFieldTask = (e)  => {
+    e.preventDefault();
+    const baseUrl = "http://localhost:8080/v1/api/vehicle-recalls"
+    this.props.dispatch(postVehicleRecalls(baseUrl, this.props.vehicle_recalls));
+  }
+  onGetListTask = ({ baseUrl }) => {
+    this.props.dispatch(getVehicleRecalls(baseUrl));
+  }
+  onSearchListTask = ({ baseUrl, value }) => {
+    this.props.dispatch(searchVehicleRecalls({baseUrl, value}));
+  }
+
+
   render() {
     return (
         <div className="App">
@@ -37,17 +53,17 @@ class App extends Component {
             </Row>
             <Row>
               <Col>
-                <FieldEnhanceCard title="Manufacturer Recall No"/>
+                <FieldEnhanceCard title="Manufacturer Recall No"  handleAddField={this.onAddFieldTask}/>
               </Col>
             </Row>
             <Row>
               <Col>
-                <FieldEnhanceCard title="Category"/>
+                <FieldEnhanceCard title="Category"  handleAddField={this.onAddFieldTask}/>
               </Col>
             </Row>
             <Row>
               <Col>
-                <FieldEnhanceCard title="System Types"/>
+                <FieldEnhanceCard title="System Types" handleAddField={this.onAddFieldTask}/>
               </Col>
             </Row>
             <Row>
@@ -65,6 +81,7 @@ class App extends Component {
   }
 }
 function mapStateToProps(state) {
+  console.log("State :" + state.vehicle_recalls)
   return {
     vehicle_recalls: state.vehicle_recalls
   }

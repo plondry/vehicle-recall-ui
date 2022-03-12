@@ -12,16 +12,6 @@ class FieldEnhanceCard extends Component {
         };
     }
 
-    onAddFieldTask = ({ baseUrl })  => {
-        this.props.dispatch(postVehicleRecalls(baseUrl));
-    }
-    onGetListTask = ({ baseUrl }) => {
-        this.props.dispatch(getVehicleRecalls(baseUrl));
-    }
-    onSearchListTask = ({ baseUrl, value }) => {
-        this.props.dispatch(searchVehicleRecalls({baseUrl, value}));
-    }
-
     render() {
         return (
             <Card>
@@ -30,7 +20,7 @@ class FieldEnhanceCard extends Component {
                     <Form>
                         <FormGroup row>
                             <Col>
-                                <Button color="primary" onClick={this.onAddFieldTask}>Add Field</Button>
+                                <Button color="primary" onClick={this.props.handleAddField}>Add Field</Button>
                             </Col>
                             <Col>
                             </Col>

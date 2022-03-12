@@ -1,4 +1,4 @@
-import {fetchVehicleRecalls} from "../api";
+import {fetchVehicleRecalls, postVehicleRecallsWithURL} from "../api";
 
 export function fetchInitialVehicleRecalls() {
     console.log("fetchInitialVehicleRecalls")
@@ -10,23 +10,24 @@ export function fetchInitialVehicleRecalls() {
     };
 }
 
-export function fetchVehicleRecallsSucceeded({ data }) {
+export function fetchVehicleRecallsSucceeded(data) {
+    console.log(data)
     return {
-        type: 'SUCCESS_INIT_VEHICLE_RECALLS',
-        payload: {
-            data
-        },
+        type: 'SUCCESS_GET_VEHICLE_RECALLS',
+        payload: data,
     };
 }
 
-export function postVehicleRecalls({ baseURL }) {
-    return {
-        type: 'POST_VEHICLE_RECALLS',
-        payload: {
-            baseURL
-        },
+export function postVehicleRecalls(baseURL, data) {
+    console.log("fetchInitialVehicleRecalls")
+    return dispatch => {
+        postVehicleRecallsWithURL(baseURL, data).then(resp => {
+            console.log(resp.data)
+            dispatch(fetchVehicleRecallsSucceeded(resp.data));
+        })
     };
 }
+
 export function getVehicleRecalls({ baseURL }) {
     return {
         type: 'GET_VEHICLE_RECALLS',

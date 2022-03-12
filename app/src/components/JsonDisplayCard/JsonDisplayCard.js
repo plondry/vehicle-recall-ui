@@ -6,11 +6,16 @@ class JsonDisplayCard extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {...props}
+        console.log(props);
+        this.state = {
+            title: '',
+            jsonData: '',
+        };
     }
 
     render() {
         const jsonData = JSON.stringify(this.props.jsonData, null, 0)
+        console.log(jsonData);
         return (
             <Card>
                 <CardHeader>{this.props.title}</CardHeader>
