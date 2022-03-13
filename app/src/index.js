@@ -3,16 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import vehicle_recalls from "../../app/src/reducers";
+import {applyMiddleware, createStore} from "redux";
+import vehicle_recalls from "./reducers";
 import {Provider} from "react-redux";
-import {createStore} from "redux";
+import thunk from 'redux-thunk'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const store = createStore(vehicle_recalls);
+const store = createStore(vehicle_recalls, applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
-    </Provider>,
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 
