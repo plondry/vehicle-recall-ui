@@ -1,4 +1,9 @@
-import {fetchVehicleRecalls, getVehicleRecallsWithURL, postVehicleRecallsWithURL} from "../api";
+import {
+    fetchVehicleRecalls,
+    getVehicleRecallsWithURL,
+    postVehicleRecallsWithURL,
+    searchVehicleRecallsWithURL
+} from "../api";
 
 export function fetchInitialVehicleRecalls() {
     console.log("fetchInitialVehicleRecalls")
@@ -32,10 +37,17 @@ export function getVehicleRecalls(baseURL) {
     };
 }
 
-export function searchVehicleRecalls({ baseURL, searchValue }) {
+export function searchVehicleRecallsSucceeded(data) {
     return {
-        type: 'SEARCH_VEHICLE_RECALLS',
-        payload: {
-        },
+        type: 'SUCCESS_SEARCH_VEHICLE_RECALLS',
+        payload: data,
+    };
+}
+
+export function searchVehicleRecalls(baseURL, searchValue) {
+    return dispatch => {
+        searchVehicleRecallsWithURL(baseURL, searchValue).then(resp => {
+            dispatch(searchVehicleRecallsSucceeded(resp.data));
+        })
     };
 }

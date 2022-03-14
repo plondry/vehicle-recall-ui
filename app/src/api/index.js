@@ -20,3 +20,6 @@ export function postVehicleRecallsWithURL(baseURL, data) {
 export function getVehicleRecallsWithURL(baseURL) {
     return axios.get(baseURL);
 }
+export function searchVehicleRecallsWithURL(baseURL, searchValue) {
+    return axios.get(baseURL+"/search?value="+searchValue);
+}

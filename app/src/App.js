@@ -8,8 +8,6 @@ import {Component} from "react";
 import {fetchInitialVehicleRecalls, getVehicleRecalls, postVehicleRecalls, searchVehicleRecalls} from "./actions";
 
 
-
-
 class App extends Component {
   componentDidMount() {
     console.log("componentDidMount");
@@ -23,7 +21,7 @@ class App extends Component {
     this.props.dispatch(getVehicleRecalls(baseUrl));
   }
   onSearchListTask = (baseUrl, value) => {
-    this.props.dispatch(searchVehicleRecalls({baseUrl, value}));
+    this.props.dispatch(searchVehicleRecalls(baseUrl,value));
   }
 
 
@@ -54,6 +52,7 @@ class App extends Component {
                     title="Manufacturer Recall No"
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
+                    handleSearchField={this.onSearchListTask}
                     baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
                 />
               </Col>
@@ -63,6 +62,8 @@ class App extends Component {
                 <FieldEnhanceCard
                     title="Category"
                     handleAddField={this.onAddFieldTask}
+                    handleGetList={this.onGetListTask}
+                    handleSearchField={this.onSearchListTask}
                     baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
                 />
               </Col>
@@ -72,6 +73,8 @@ class App extends Component {
                 <FieldEnhanceCard
                     title="System Types"
                     handleAddField={this.onAddFieldTask}
+                    handleGetList={this.onGetListTask}
+                    handleSearchField={this.onSearchListTask}
                     baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
                 />
               </Col>
@@ -81,7 +84,7 @@ class App extends Component {
                 <JsonDisplayCard title="JSON" jsonData={this.props.vehicle_recalls}/>
               </Col>
               <Col>
-                <JsonDisplayCard title="Search Results"/>
+                <JsonDisplayCard title="Search Results" jsonData={this.props.search_results}/>
               </Col>
             </Row>
           </Container>
@@ -91,9 +94,9 @@ class App extends Component {
   }
 }
 function mapStateToProps(state) {
-  console.log("State :" + state.vehicle_recalls)
   return {
-    vehicle_recalls: state.vehicle_recalls
+    vehicle_recalls: state.vehicle_recalls,
+    search_results: state.search_results
   }
 }
 

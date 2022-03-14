@@ -5,15 +5,13 @@ import {
     CardHeader,
     CardBody,
     Button,
-    Label,
     Input,
     Form,
     FormGroup,
     Col,
     InputGroup,
-    InputGroupText, FormText
+    FormText
 } from "reactstrap";
-import {getVehicleRecalls, postVehicleRecalls, searchVehicleRecalls} from "../../actions";
 
 class FieldEnhanceCard extends Component {
     constructor(props) {
@@ -21,7 +19,15 @@ class FieldEnhanceCard extends Component {
         this.state = {
             title: '',
             baseUrl: '',
+            searchValue: '',
         };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange({ target }) {
+        this.setState({
+            [target.name]: target.value
+        });
     }
 
     render() {
@@ -44,12 +50,14 @@ class FieldEnhanceCard extends Component {
                             <Col>
                                 <InputGroup>
                                 <Input
-                                    id="searchField"
-                                    name="searchField"
+                                    id="searchValue"
+                                    name="searchValue"
                                     type="text"
+                                    value={ this.state.searchValue }
+                                    onChange={ this.handleChange }
                                 />
                                 <Button color="primary"
-                                        onClick={(e) => {e.preventDefault();this.props.handleAddField(this.props.baseUrl);}}>
+                                        onClick={(e) => {e.preventDefault();this.props.handleSearchField(this.props.baseUrl, this.state.searchValue);}}>
                                     Search
                                 </Button>
 
