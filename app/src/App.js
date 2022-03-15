@@ -2,16 +2,33 @@ import logo from './logo.svg';
 import './App.css';
 import FieldEnhanceCard from "./components/FieldEnhanceCard/FieldEnhanceCard";
 import JsonDisplayCard from "./components/JsonDisplayCard/JsonDisplayCard";
-import {Container, Row, Col, Button, FormGroup, Label, Input, FormText} from "reactstrap";
+import {Container, Row, Col, Button, FormGroup, Label, Input, FormText, Spinner} from "reactstrap";
 import {connect} from "react-redux";
 import {Component} from "react";
-import {fetchInitialVehicleRecalls, getVehicleRecalls, postVehicleRecalls, searchVehicleRecalls} from "./actions";
+import {
+  fetchInitialVehicleRecalls,
+  fetchVehicleRecallsFromFile,
+  getVehicleRecalls,
+  postVehicleRecalls,
+  searchVehicleRecalls
+} from "./actions";
 
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.onAddFieldTask = this.onAddFieldTask.bind(this)
+
+  }
   componentDidMount() {
     console.log("componentDidMount");
-    this.props.dispatch(fetchInitialVehicleRecalls());
+   // this.props.dispatch(fetchInitialVehicleRecalls());
+  }
+
+  loadFile = (e) => {
+    e.preventDefault();
+    this.props.dispatch(fetchVehicleRecallsFromFile(e.target.files[0]));
+
   }
 
   onAddFieldTask = (baseUrl)  => {
@@ -26,8 +43,17 @@ class App extends Component {
 
 
   render() {
+
+    if (this.props.isLoading) {
+      return (<Spinner animation="border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </Spinner>);
+    }
+
     return (
         <div className="App">
+
+
           <Container>
             <Row>
               <Col>
@@ -39,6 +65,7 @@ class App extends Component {
                       id="jsonfile"
                       name="jsonfile"
                       type="file"
+                      onChange={(e) => this.loadFile(e)}
                   />
                   <FormText>
                     Load initial json file
@@ -75,7 +102,7 @@ class App extends Component {
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
-                    baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
+                    baseUrl="http://localhost:8004/v1/api/vehicle-recalls"
                 />
               </Col>
             </Row>
@@ -96,7 +123,9 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     vehicle_recalls: state.vehicle_recalls,
-    search_results: state.search_results
+    search_results: state.search_results,
+    isLoading: state.isLoading,
+    stage: state.stage
   }
 }
 

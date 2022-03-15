@@ -5,14 +5,25 @@ import {
     searchVehicleRecallsWithURL
 } from "../api";
 
-export function fetchInitialVehicleRecalls() {
-    console.log("fetchInitialVehicleRecalls")
+export function fetchVehicleRecallsFromFile(file) {
+
+
     return dispatch => {
-        fetchVehicleRecalls().then(resp => {
-            console.log(resp.data)
-            dispatch(fetchVehicleRecallsSucceeded(resp.data));
-        })
-    };
+        const reader = new FileReader();
+        reader.onload = async (e) => {
+            const data = (e.target.result);
+            dispatch(fetchVehicleRecallsSucceeded(JSON.parse(data)));
+        }
+        reader.readAsText(file);
+    }
+    // reader.readAsText(e.target.files[0]);
+    // console.log("fetchInitialVehicleRecalls")
+    // return dispatch => {
+    //     fetchVehicleRecalls().then(resp => {
+    //         console.log(resp.data)
+    //         dispatch(fetchVehicleRecallsSucceeded(resp.data));
+    //     })
+    // };
 }
 
 export function fetchVehicleRecallsSucceeded(data) {
