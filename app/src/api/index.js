@@ -21,5 +21,8 @@ export function getVehicleRecallsWithURL(baseURL) {
     return axios.get(baseURL);
 }
 export function searchVehicleRecallsWithURL(baseURL, searchValue) {
-    return axios.get(baseURL+"/search?value="+searchValue);
+    if (API_BASE_URL=='http://localhost:3001'){
+        var searchparam="/?manufacturer_recall_no_txt="
+    }
+    return axios.get(baseURL+searchparam+searchValue);
 }
