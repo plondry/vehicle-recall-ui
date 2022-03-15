@@ -98,7 +98,7 @@ class App extends Component {
             <Row>
               <Col>
                 <FieldEnhanceCard
-                    title="System Types"
+                    title="System Type"
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
@@ -106,6 +106,18 @@ class App extends Component {
                 />
               </Col>
             </Row>
+            <Row>
+              <Col>
+                <FieldEnhanceCard
+                    title="Notification Type"
+                    handleAddField={this.onAddFieldTask}
+                    handleGetList={this.onGetListTask}
+                    handleSearchField={this.onSearchListTask}
+                    baseUrl="http://localhost:3004/v1/api/vehicle-recalls"
+                />
+              </Col>
+            </Row>
+
             <Row>
               <Col>
                 <JsonDisplayCard title="JSON"
