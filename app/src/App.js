@@ -80,7 +80,7 @@ class App extends Component {
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
-                    baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
+                    baseUrl="http://localhost:3001/v1/api/vehicle-recalls"
                 />
               </Col>
             </Row>
@@ -91,7 +91,7 @@ class App extends Component {
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
-                    baseUrl="http://localhost:8080/v1/api/vehicle-recalls"
+                    baseUrl="http://localhost:3002/v1/api/vehicle-recalls"
                 />
               </Col>
             </Row>
@@ -102,16 +102,20 @@ class App extends Component {
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
-                    baseUrl="http://localhost:8004/v1/api/vehicle-recalls"
+                    baseUrl="http://localhost:3003/v1/api/vehicle-recalls"
                 />
               </Col>
             </Row>
             <Row>
               <Col>
-                <JsonDisplayCard title="JSON" jsonData={this.props.vehicle_recalls}/>
+                <JsonDisplayCard title="JSON"
+                                 fileName="vehicle-recalls.json"
+                                 jsonData={this.props.vehicle_recalls}/>
               </Col>
               <Col>
-                <JsonDisplayCard title="Search Results" jsonData={this.props.search_results}/>
+                <JsonDisplayCard title="Search Results"
+                                 fileName="vh-search-results.json"
+                                 jsonData={this.props.search_results}/>
               </Col>
             </Row>
           </Container>

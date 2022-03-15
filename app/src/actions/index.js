@@ -16,14 +16,6 @@ export function fetchVehicleRecallsFromFile(file) {
         }
         reader.readAsText(file);
     }
-    // reader.readAsText(e.target.files[0]);
-    // console.log("fetchInitialVehicleRecalls")
-    // return dispatch => {
-    //     fetchVehicleRecalls().then(resp => {
-    //         console.log(resp.data)
-    //         dispatch(fetchVehicleRecallsSucceeded(resp.data));
-    //     })
-    // };
 }
 
 export function fetchVehicleRecallsSucceeded(data) {
