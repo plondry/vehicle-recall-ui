@@ -36,6 +36,20 @@ npm install
 npm start
 ```
 ### Starting API 1
+API 1 is built with nodejs and express
+
+You must have **Node v14.17.2* installed on your computer
+
+
+
+```
+#Install server dependencies
+cd /apis/API1
+npm install
+
+#Start API1 Server
+node server.js
+```
 
 ### Starting API 2
 
@@ -73,7 +87,15 @@ npm start
 
 
 # API1
+API1 is written in Javascript and located in apis\API1.
 
+## Endpoints definiton:
+
+Post Endpoint is: http://localhost:3001/v1/api/vehicle-recalls
+
+GetAll Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
+
+GetByValue retrieved Endpoint is: http://localhost:3003/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
 
 
 # API2
