@@ -1,27 +1,48 @@
-# vehicle-recall-ui
+# Vehicle Recall Enhancement
 
 It consists of a front-end app and 4 back-end web apis.
 
-- The front-end app is written in React by Peter Londry. 
+- The front-end app is written in React. 
 
-- 4 back-end web apis are written in different languages/framework:
+- 4 back-end web apis are written in different languages/framework (they run independently):
 
-  API1 is written in  by Mubarak Oseni.
+  - API1 is written in  by Mubarak Oseni.
 
-  API2 is written in  by Katya Batura.
+  - API2 is written in  by Katya Batura.
 
-  API3 is written in Java by Peter Londry.
+  - API3 is written in Java by Peter Londry.
 
-  API4 is written in .net 6 by Wu Ding.  
+  - API4 is written in .net 6 by Wu Ding.  
 
-  They can run independently.
+
 
 ## Running Locally
+### Starting the Frontend App
+1. Install NodeJS (https://nodejs.org/en/)
+2.  Run the following commands:
+```
+cd /app
+npm install
+npm start
+```
+### Starting API 1
 
-- start up API 1
-- start up API 2
-- start up API 3
-- start up API 4
+### Starting API 2
+
+### Starting API 3 
+API 3 is a Java Spring Boot application built using Gradle. 
+
+You must have **Java 11 JDK** installed on your
+  computer. (https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html) 
+
+You can build a jar file and run it from the command line:
+```
+cd api/API3/
+gradlew build
+java -jar ./build/libs/vrd-api-1.0.0.jar
+```
+For more information on API 3, see [API 3's README](https://github.com/plondry/vehicle-recall-ui/tree/main/apis/API3)
+### Starting API 4
   1. Install Visual Studio 2022 and install .net 6 SDK.
   
   2. Open apis\API4\TCVrdWebApi\TCVrdWebApi.sln in Visual Studio 2022

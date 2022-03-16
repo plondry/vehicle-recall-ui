@@ -8,8 +8,8 @@ VehicleRecallAPI is a Spring Boot application built using Gradle following a Hex
 computer.  You can build a jar file and run it from the command line:
 
 ```
-git clone https://github.com/plondry/tc_vehicle_recall.git
-cd tc_vehicle_recall
+git clone https://github.com/plondry/vehicle-recall-ui.git
+cd apis/API3
 gradlew build
 java -jar ./build/libs/vrd-api-1.0.0.jar
 ```
