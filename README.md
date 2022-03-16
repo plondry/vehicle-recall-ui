@@ -30,7 +30,7 @@ http://localhost:3001/v1/api/vehicle-recalls/
 ##Request to retrieve a single record if provided with a record identifier
 http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt={manufacturer_recall_no_txt}
 Example:
-https://adf0-37-19-212-74.ngrok.io/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=15S26
+http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=15C07
 
 ```
 
