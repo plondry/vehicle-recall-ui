@@ -26,9 +26,11 @@ class App extends Component {
 
   }
 
-  loadFile = (e) => {
-    e.preventDefault();
-    this.props.dispatch(fetchVehicleRecallsFromFile(e.target.files[0]));
+  loadFile = (e) => {    
+    if (e?.target?.files.length > 0) {                 
+      e.preventDefault();    
+      this.props.dispatch(fetchVehicleRecallsFromFile(e.target.files[0]));
+    }    
   }
 
   onAddFieldTask = (baseUrl)  => {
