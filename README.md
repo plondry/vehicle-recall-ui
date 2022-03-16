@@ -22,7 +22,7 @@ npm install
 node server.js
 
 ##Open a Browser Client
-Open a web browser and go to the URL:<http://localhost:3001/v1/api/vehicle-recalls/>.
+Open a web browser and go to the URL:http://localhost:3001/v1/api/vehicle-recalls/.
 
 ##Request to retrieve ALL data 
 http://localhost:3001/v1/api/vehicle-recalls/
