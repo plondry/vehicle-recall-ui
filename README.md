@@ -96,6 +96,14 @@ Post Endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 GetAll Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
 GetByValue retrieved Endpoint is: http://localhost:3003/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
+  
+## Online Endpoints definiton:  
+  
+Post Endpoint is: https://90f5-37-19-212-133.ngrok.io/v1/api/vehicle-recalls/
+
+GetAll Endpoint is: https://90f5-37-19-212-133.ngrok.io/v1/api/vehicle-recalls/
+
+GetByValue retrieved Endpoint is: https://90f5-37-19-212-133.ngrok.io/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
 
 
 # API2
