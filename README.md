@@ -14,7 +14,6 @@ cd /app
 
 ```
 ## Install server dependencies
-
 cd /api/api1
 npm install
 
