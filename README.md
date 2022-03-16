@@ -22,7 +22,7 @@ It consists of a front-end app and 4 back-end web apis.
 git clone https://github.com/plondry/vehicle-recall-ui.git
 cd vehicle-recall-ui
 ```
-3.  Start Frontend and APIs - see below.
+2.  Start Frontend and APIs - see below.
 
 ### Starting the Frontend App
 1. Install NodeJS (https://nodejs.org/en/)
@@ -75,16 +75,6 @@ For more information on API 3, see [API 3's README](https://github.com/plondry/v
 
   4. Press F5 do run the project "TCVrdWebApi". If you see a browser is launched with http://localhost:3004/swagger/index.html, api4 webapi is running!
 
-- Start up front-end
-  
-  Please install node.js firstly. 
-```
-cd /app
-npm install
-npm start
-```
-
-
 
 # API1
 API1 is written in Javascript and located in apis\API1.
@@ -93,9 +83,9 @@ API1 is written in Javascript and located in apis\API1.
 
 Post Endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
-GetAll Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
+GetAll Endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
-GetByValue retrieved Endpoint is: http://localhost:3003/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
+GetByValue retrieval Endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
   
 
 
@@ -111,7 +101,7 @@ Post Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
 GetAll Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
-GetByValue retrieved Endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value=<value>
+GetByValue retrieval Endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value=<value>
 
 # API4
 
@@ -125,7 +115,7 @@ Post Endpoint is: http://localhost:3004/v1/api/vehicle-recalls
 
 GetAll Endpoint is: http://localhost:3004/v1/api/vehicle-recalls
 
-GetByValue retrieved Endpoint is: http://localhost:3004/v1/api/vehicle-recalls/search?value=<value>
+GetByValue retrieval Endpoint is: http://localhost:3004/v1/api/vehicle-recalls/search?value=<value>
 
 
 # Front end app
