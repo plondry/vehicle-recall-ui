@@ -13,9 +13,10 @@ cd /app
 # API1
 
 ```
-cd /api/api1
+## Install server dependencies
 
-## Install
+cd /api/api1
+npm install
 
 ```
 
