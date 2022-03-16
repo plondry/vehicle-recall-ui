@@ -63,7 +63,7 @@ class FieldEnhanceCard extends Component {
                                 </Button>
                                 <Button color="primary" className="button"
                                         onClick={(e) => this.getList(e)}>
-                                    Reload Json
+                                    Get All
                                 </Button>
                             </Col>
                             <Col>
