@@ -6,7 +6,7 @@ It consists of a front-end app and 4 back-end web apis.
 
 - 4 back-end web apis are written in different languages/framework (they run independently):
 
-  - API1 is written in  by Mubarak Oseni.
+  - API1 is written in Javascript by Mubarak Oseni.
 
   - API2 is written in  by Katya Batura.
 
