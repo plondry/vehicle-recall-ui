@@ -82,7 +82,7 @@ class FieldEnhanceCard extends Component {
 
                                 </InputGroup>
                                 <FormText>
-                                    Search {this.props.fieldName}
+                                    Search {this.props.fieldName} - see results below
                                 </FormText>
                             </Col>
                         </FormGroup>

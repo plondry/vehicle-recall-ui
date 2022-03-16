@@ -1,6 +1,6 @@
 import React from 'react';
 import './JsonDisplayCard.css';
-import {Button, Card, CardBody, CardHeader, CardText} from "reactstrap";
+import {Button, Card, CardHeader, CardText} from "reactstrap";
 import ReactJson from "react-json-view";
 import {saveAs} from 'file-saver'
 

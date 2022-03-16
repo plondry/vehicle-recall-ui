@@ -44,8 +44,6 @@ class App extends Component {
 
   render() {
 
-    console.log(this.props.isLoading);
-
     return (
         <div className="App">
           {this.props.isLoading ?
@@ -102,7 +100,7 @@ class App extends Component {
                 <FieldEnhanceCard
                     step="4"
                     stage="API3"
-                    fieldName="System Types"
+                    fieldName="System Type"
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
@@ -113,14 +111,29 @@ class App extends Component {
             </Row>
             <Row>
               <Col>
-                {this.props.isLoading ?
-                    <Spinner animation="border" role="status"   color="primary">
-                      <span className="visually-hidden">Loading...</span>
-                    </Spinner>:<span></span>}
-
+                <FieldEnhanceCard
+                    step="5"
+                    stage="API4"
+                    fieldName="Notification Type"
+                    handleAddField={this.onAddFieldTask}
+                    handleGetList={this.onGetListTask}
+                    handleSearchField={this.onSearchListTask}
+                    baseUrl="http://localhost:3004/v1/api/vehicle-recalls"
+                    dispatch={this.props.dispatch}
+                />
               </Col>
-
             </Row>
+              <Row>
+                  <Col>
+                      {this.props.isLoading ?
+                          <Spinner animation="border" role="status"   color="primary">
+                              <span className="visually-hidden">Loading...</span>
+                          </Spinner>:<span></span>}
+
+                  </Col>
+
+              </Row>
+
             <Row>
               <Col>
                 <JsonDisplayCard title="JSON"
