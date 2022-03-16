@@ -1,0 +1,4 @@
+{
+  "Message": "The request is invalid.",
+  "MessageDetail": "The parameters dictionary does not contain an entry for parameter 'parameters' of type 'DataPortalApi.Core.QueryParameter' for method 'DataPortalApi.Core.Json.JsonObject Parameters(System.String, System.String, DataPortalApi.Core.QueryParameter, System.Nullable`1[System.Int32], System.Nullable`1[System.Int32])' in 'DataPortalApi.Controllers.ValuesController'. The dictionary must contain an entry for each parameter, including parameters that have null values."
+}

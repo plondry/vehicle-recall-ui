@@ -1,0 +1,111 @@
+{
+  "ResultSet": [
+    [
+      {
+        "Name": "RECALL_NUMBER_NUM",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "2016253"
+        }
+      },
+      {
+        "Name": "MANUFACTURER_RECALL_NO_TXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "16C08"
+        }
+      },
+      {
+        "Name": "CATEGORY_ETXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Car"
+        }
+      },
+      {
+        "Name": "CATEGORY_FTXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Voiture"
+        }
+      },
+      {
+        "Name": "MODEL_NAME_NM",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "FUSION"
+        }
+      },
+      {
+        "Name": "MAKE_NAME_NM",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "FORD"
+        }
+      },
+      {
+        "Name": "UNIT_AFFECTED_NBR",
+        "Value": {
+          "Type": "System.Decimal",
+          "Literal": "1050"
+        }
+      },
+      {
+        "Name": "SYSTEM_TYPE_ETXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Lights And Instruments"
+        }
+      },
+      {
+        "Name": "SYSTEM_TYPE_FTXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Feux et instruments"
+        }
+      },
+      {
+        "Name": "NOTIFICATION_TYPE_ETXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Compliance Mfr"
+        }
+      },
+      {
+        "Name": "NOTIFICATION_TYPE_FTXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Conformité - fabricant"
+        }
+      },
+      {
+        "Name": "COMMENT_ETXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Certain vehicles may not comply with the requirements of Canada Motor Vehicle Safety Standard 108 - Lighting System and Retroreflective Devices. Some vehicles equipped with LED headlamps were built with defective support brackets which can cause the daytime running lamp light guide to shift out of design position. If this occurs, the support bracket can melt due to the increased exposure to the LED light energy.  This can cause melted material to partially block the end of the light guide, subsequently causing a loss of lighting performance which could result in failure to meet the daytime running lamp light output requirements of the standard. This could result in the vehicle being less visible to other drivers, which could increase the risk of a crash causing injury and/or damage to property. Correction: Dealers will replace both headlamp assemblies."
+        }
+      },
+      {
+        "Name": "COMMENT_FTXT",
+        "Value": {
+          "Type": "System.String",
+          "Literal": "Certains véhicules ne seraient pas conformes à l’exigence 108 (système d’éclairage et dispositifs rétroréfléchissants) des Normes de sécurité des véhicules automobiles du Canada. Leurs phares à DEL comporteraient des supports défectueux qui pourraient entraîner un déplacement du guide de phare de jour par rapport à sa position de conception, une fusion de celui-ci en raison d’une exposition accrue à l’énergie lumineuse, un blocage partiel de son extrémité, une perte d’éclairage, un manquement à l’exigence susmentionnée, une diminution de la visibilité des véhicules et un accroissement des risques de collision causant des blessures et/ou des dommages matériels. Correction : les détaillants doivent remplacer les deux phares."
+        }
+      },
+      {
+        "Name": "DATE_YEAR_CD",
+        "Value": {
+          "Type": "System.Decimal",
+          "Literal": "2017"
+        }
+      },
+      {
+        "Name": "RECALL_DATE_DTE",
+        "Value": {
+          "Type": "System.DateTime",
+          "Literal": "5/24/2016 12:00:00 AM"
+        }
+      }
+    ]
+  ]
+}

@@ -1,0 +1,9 @@
+ca:
+  gc:
+    tc:
+      exam:
+        vrd-url-template: https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/%s?format=json
+
+        attributes: ${attr_list:systemTypeEtxt,systemTypeFtxt}
+server:
+  port: ${server_port:3003}

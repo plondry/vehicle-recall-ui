@@ -1,0 +1,7 @@
+server:
+  port: 9000
+ca:
+  gc:
+    tc:
+      exam:
+        vrd-url-template: http://localhost:9000/recall-summary/%s

@@ -22,3 +22,32 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+apis/API3/HELP.md
+apis/API3/.gradle
+apis/API3/build/
+!apis/API3/gradle/wrapper/gradle-wrapper.jar
+!apis/API3/**/src/main/**/build/
+!apis/API3/**/src/test/**/build/
+
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+apis/API3/bin/
+!apis/API3/**/src/main/**/bin/
+!apis/API3/**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+apis/API3/.idea
+apis/API3/*.iws
+apis/API3/*.iml
+apis/API3/*.ipr
+apis/API3/out/
+!apis/API3/**/src/main/**/out/
+!apis/API3/**/src/test/**/out/
