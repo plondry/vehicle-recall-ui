@@ -1,12 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
 import FieldEnhanceCard from "./components/FieldEnhanceCard/FieldEnhanceCard";
 import JsonDisplayCard from "./components/JsonDisplayCard/JsonDisplayCard";
-import {Container, Row, Col, Button, FormGroup, Label, Input, FormText, Spinner} from "reactstrap";
-import {connect} from "react-redux";
-import {Component} from "react";
 import {
-  fetchInitialVehicleRecalls,
+  Container,
+  Row,
+  Col,
+  Input,
+  Spinner,
+  CardHeader, CardBody, Card
+} from "reactstrap";
+import {connect} from "react-redux";
+import React, {Component} from "react";
+import {
   fetchVehicleRecallsFromFile,
   getVehicleRecalls,
   postVehicleRecalls,
@@ -20,15 +25,10 @@ class App extends Component {
     this.onAddFieldTask = this.onAddFieldTask.bind(this)
 
   }
-  componentDidMount() {
-    console.log("componentDidMount");
-   // this.props.dispatch(fetchInitialVehicleRecalls());
-  }
 
   loadFile = (e) => {
     e.preventDefault();
     this.props.dispatch(fetchVehicleRecallsFromFile(e.target.files[0]));
-
   }
 
   onAddFieldTask = (baseUrl)  => {
@@ -44,77 +44,92 @@ class App extends Component {
 
   render() {
 
-    if (this.props.isLoading) {
-      return (<Spinner animation="border" role="status">
-        <span className="visually-hidden">Loading...</span>
-      </Spinner>);
-    }
+    console.log(this.props.isLoading);
 
     return (
         <div className="App">
-
-
+          {this.props.isLoading ?
+              <Spinner animation="border" role="status" color="primary">
+                <span className="visually-hidden">Loading...</span>
+              </Spinner>:<span></span>}
           <Container>
             <Row>
               <Col>
-                <FormGroup>
-                  <Label for="jsonfile">
-                    JSON File
-                  </Label>
-                  <Input
-                      id="jsonfile"
-                      name="jsonfile"
-                      type="file"
-                      onChange={(e) => this.loadFile(e)}
-                  />
-                  <FormText>
-                    Load initial json file
-                  </FormText>
-                </FormGroup>
+                <Card className="fieldEnhanceCard">
+                  <CardHeader className="left-align">STEP 1: Load Initial Json File - <span className="small-text">View JSON Below</span></CardHeader>
+                  <CardBody>
+                    <Input
+                        id="jsonfile"
+                        name="jsonfile"
+                        type="file"
+                        onChange={(e) => this.loadFile(e)}
+                    />
+                  </CardBody>
+                </Card>
               </Col>
             </Row>
             <Row>
               <Col>
+
                 <FieldEnhanceCard
-                    title="Manufacturer Recall No"
+                    step="2"
+                    stage="API1"
+                    fieldName="Manufacturer Recall No"
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
                     baseUrl="http://localhost:3001/v1/api/vehicle-recalls"
+                    dispatch={this.props.dispatch}
                 />
               </Col>
             </Row>
             <Row>
               <Col>
                 <FieldEnhanceCard
-                    title="Category"
+                    step="3"
+                    stage="API2"
+                    fieldName="Category"
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
                     baseUrl="http://localhost:3002/v1/api/vehicle-recalls"
+                    dispatch={this.props.dispatch}
                 />
               </Col>
             </Row>
             <Row>
               <Col>
                 <FieldEnhanceCard
-                    title="System Types"
+                    step="4"
+                    stage="API3"
+                    fieldName="System Types"
                     handleAddField={this.onAddFieldTask}
                     handleGetList={this.onGetListTask}
                     handleSearchField={this.onSearchListTask}
                     baseUrl="http://localhost:3003/v1/api/vehicle-recalls"
+                    dispatch={this.props.dispatch}
                 />
               </Col>
             </Row>
             <Row>
               <Col>
+                {this.props.isLoading ?
+                    <Spinner animation="border" role="status"   color="primary">
+                      <span className="visually-hidden">Loading...</span>
+                    </Spinner>:<span></span>}
+
+              </Col>
+
+            </Row>
+            <Row>
+              <Col>
                 <JsonDisplayCard title="JSON"
-                                 fileName="vehicle-recalls.json"
+                                 fileName={"vehicle-recalls-" + this.props.stage + ".json"}
                                  jsonData={this.props.vehicle_recalls}/>
               </Col>
               <Col>
                 <JsonDisplayCard title="Search Results"
-                                 fileName="vh-search-results.json"
+                                 fileName={"vh-search-results-" + this.props.stage + ".json"}
                                  jsonData={this.props.search_results}/>
               </Col>
             </Row>

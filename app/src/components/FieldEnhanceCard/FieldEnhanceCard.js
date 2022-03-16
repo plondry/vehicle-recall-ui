@@ -12,16 +12,21 @@ import {
     InputGroup,
     FormText
 } from "reactstrap";
+import {setStage} from "../../actions";
 
 class FieldEnhanceCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: '',
+            fieldName: '',
+            step: '',
             baseUrl: '',
             searchValue: '',
         };
         this.handleChange = this.handleChange.bind(this);
+        this.addField = this.addField.bind(this);
+        this.getList = this.getList.bind(this);
+        this.searchField = this.searchField.bind(this);
     }
 
     handleChange({ target }) {
@@ -29,21 +34,35 @@ class FieldEnhanceCard extends Component {
             [target.name]: target.value
         });
     }
-
+    addField(e) {
+        e.preventDefault();
+        this.props.dispatch(setStage(this.props.stage));
+        this.props.handleAddField(this.props.baseUrl);
+    }
+    getList(e) {
+        e.preventDefault();
+        this.props.dispatch(setStage(this.props.stage));
+        this.props.handleGetList(this.props.baseUrl);
+    }
+    searchField(e) {
+        e.preventDefault();
+        this.props.dispatch(setStage(this.props.stage));
+        this.props.handleSearchField(this.props.baseUrl, this.state.searchValue);
+    }
     render() {
         return (
             <Card className="fieldEnhanceCard">
-                <CardHeader>{this.props.title}</CardHeader>
+                <CardHeader className="left-align">STEP {this.props.step}: Load {this.props.fieldName} field</CardHeader>
                 <CardBody>
                     <Form>
                         <FormGroup row>
                             <Col className="left-align">
                                 <Button color="primary" className="button"
-                                        onClick={(e) => {e.preventDefault();this.props.handleAddField(this.props.baseUrl);}}>
+                                        onClick={(e) => this.addField(e)}>
                                     Add Field
                                 </Button>
                                 <Button color="primary" className="button"
-                                        onClick={(e) => {e.preventDefault();this.props.handleGetList(this.props.baseUrl);}}>
+                                        onClick={(e) => this.getList(e)}>
                                     Reload Json
                                 </Button>
                             </Col>
@@ -57,13 +76,13 @@ class FieldEnhanceCard extends Component {
                                     onChange={ this.handleChange }
                                 />
                                 <Button color="primary"
-                                        onClick={(e) => {e.preventDefault();this.props.handleSearchField(this.props.baseUrl, this.state.searchValue);}}>
+                                        onClick={(e) => this.searchField(e)}>
                                     Search
                                 </Button>
 
                                 </InputGroup>
                                 <FormText>
-                                    Search {this.props.title}
+                                    Search {this.props.fieldName}
                                 </FormText>
                             </Col>
                         </FormGroup>
