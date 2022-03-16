@@ -17,11 +17,21 @@ It consists of a front-end app and 4 back-end web apis.
 
 
 ## Running Locally
+1. Clone repository
+```
+git clone https://github.com/plondry/vehicle-recall-ui.git
+cd vehicle-recall-ui
+```
+3.  Start Frontend and APIs - see below.
+
 ### Starting the Frontend App
 1. Install NodeJS (https://nodejs.org/en/)
 2.  Run the following commands:
 ```
-cd /app
+git clone https://github.com/plondry/vehicle-recall-ui.git
+cd vehicle-recall-ui
+npm install
+cd app
 npm install
 npm start
 ```
