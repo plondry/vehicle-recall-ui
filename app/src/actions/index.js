@@ -47,7 +47,12 @@ export function postVehicleRecalls(baseURL, data) {
         postVehicleRecallsWithURL(baseURL, data).then(resp => {
             dispatch(fetchVehicleRecallsSucceeded(resp.data));
             dispatch(unsetLoadingFlag())
+        }).catch(err => {
+          alert(err);
+          dispatch(unsetLoadingFlag())
         })
+
+
 
     };
 }
@@ -57,6 +62,9 @@ export function getVehicleRecalls(baseURL) {
 
         getVehicleRecallsWithURL(baseURL).then(resp => {
             dispatch(fetchVehicleRecallsSucceeded(resp.data));
+            dispatch(unsetLoadingFlag())
+        }).catch(err => {
+            alert(err);
             dispatch(unsetLoadingFlag())
         })
     };
@@ -75,6 +83,9 @@ export function searchVehicleRecalls(baseURL, searchValue) {
 
         searchVehicleRecallsWithURL(baseURL, searchValue).then(resp => {
             dispatch(searchVehicleRecallsSucceeded(resp.data));
+            dispatch(unsetLoadingFlag())
+        }).catch(err => {
+            alert(err);
             dispatch(unsetLoadingFlag())
         })
     };

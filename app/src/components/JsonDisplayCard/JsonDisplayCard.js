@@ -19,7 +19,6 @@ class JsonDisplayCard extends React.Component {
 
     saveFile = () => {
         let json = JSON.stringify(this.props.jsonData);
-        console.log(json);
         let blob = new Blob([json], {type: "application/json; charset=utf-8"});
         saveAs(blob, this.props.fileName);
     }
