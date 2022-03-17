@@ -128,3 +128,18 @@ GetByValue retrieval endpoint is: http://localhost:3004/v1/api/vehicle-recalls/s
 # Front End App Introduction
 
 The front end app is written in React.
+
+To use the App, once it's started, open a browser and go to http://localhost:3000
+
+1.  Load the initial JSON file using the file selector at the top of the page.
+
+![](img/Step1.png)
+
+- The JSON will load and can be viewed in the JSON panel at the bottom of the screen.  This panel will let you download the current JSON at any point in the process.  You can then use the cached JSON or reload the JSON file using step 1 above.
+  ![](img/JSONPanel.png)
+
+2. For each of the API Steps, you can click on the following buttons
+  1. `Add Field` - This will invoke the `POST` request on the API, passing in the cached JSON in the web app (in the JSON panel) - The results of this service request will be presented in the JSON Panel at the bottom of the page.
+  2. `Load All` - This will invoke the `GET` request on the API, and refresh the web app JSON cache (in the JSON panel)
+  3. `Search` - This will invoke the `GET` search request on the API and load the results in the `Search Results` panel at the bottom of the screen.  You can also download this JSON file.
+     ![](img/APIPanel.png)
