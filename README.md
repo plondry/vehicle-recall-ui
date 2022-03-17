@@ -14,7 +14,7 @@ It consists of a front-end app and 4 back-end web apis.
 
   - API 4 is written in .net 6 by Wu Ding.  
 
-
+Recommended browsers are Chrome, Microsoft Edge, and Firefox since our app is fully tested in these browsers.
 
 ## Running Locally
 1. Clone repository
@@ -35,6 +35,7 @@ cd app
 npm install
 npm start
 ```
+
 ### Starting API 1
 API 1 is built with nodejs and express
 
