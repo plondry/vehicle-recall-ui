@@ -19,22 +19,22 @@ Recommended browsers are Chrome, Microsoft Edge, and Firefox since our app is fu
 
 ## Running Locally
 1. Clone repository
-```
-git clone https://github.com/plondry/vehicle-recall-ui.git
-cd vehicle-recall-ui
+```shell
+> git clone https://github.com/plondry/vehicle-recall-ui.git
+> cd vehicle-recall-ui
 ```
 2.  Start Frontend and APIs - see below.
 
 ### Starting the Frontend App
 1. Install NodeJS (https://nodejs.org/en/)
 2.  Run the following commands:
-```
-git clone https://github.com/plondry/vehicle-recall-ui.git
-cd vehicle-recall-ui
-npm install
-cd app
-npm install
-npm start
+```shell
+> git clone https://github.com/plondry/vehicle-recall-ui.git
+> cd vehicle-recall-ui
+vehicle-recall-ui> npm install
+vehicle-recall-ui> cd app
+vehicle-recall-ui\app> npm install
+vehicle-recall-ui\app> npm start
 ```
 
 ### Starting API 1
@@ -67,10 +67,10 @@ You must have **Java 11 JDK** installed on your
   computer. (https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html) 
 
 You can build a jar file and run it from the command line:
-```
-cd api/API3/
-gradlew build
-java -jar ./build/libs/vrd-api-1.0.0.jar
+```shell
+vehicle-recall-ui> cd apis/API3/
+vehicle-recall-ui\apis\API3> gradlew build
+vehicle-recall-ui\apis\API3> java -jar ./build/libs/vrd-api-1.0.0.jar
 ```
 For more information on API 3, see [API 3's README](https://github.com/plondry/vehicle-recall-ui/tree/main/apis/API3)
 ### Starting API 4
