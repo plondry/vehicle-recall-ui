@@ -3,7 +3,8 @@ const slugify = require('slugify');
 const apiOneScheme = new mongoose.Schema({
   recallNumber: {
     type: String,
-    required: true
+    required: true,
+    unique: true 
   },
    manufactureName: {
     type: String,
