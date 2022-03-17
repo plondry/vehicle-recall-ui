@@ -38,7 +38,7 @@ namespace TCVrdWebApi.Controllers
             var recallItems = JsonConvert.DeserializeObject<IEnumerable<RecallItem>>(strRecall);                                 
             
 
-            return recallItems.Where(item => { return item.notificationTypeEtxt == value || item.notificationTypeFtxt == value; });
+            return recallItems.Where(item => { return item.NotificationTypeEtxt == value || item.NotificationTypeFtxt == value; });
         }
         
         [HttpPost]
@@ -50,7 +50,7 @@ namespace TCVrdWebApi.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var tasks = recallItems.Select(async item =>
             {
-                var url = $"http://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/{item.recallNumber}?format=json";
+                var url = $"http://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/{item.RecallNumber}?format=json";
                 var responseMessage = await httpClient.GetAsync(url);
                 responseMessage.EnsureSuccessStatusCode();
 
@@ -60,8 +60,8 @@ namespace TCVrdWebApi.Controllers
                 {
                     //I have tested if the following property is unique for a given recall number:
                     // MANUFACTURER_RECALL_NO_TXT, SYSTEM_TYPE_ETXT, NOTIFICATION_TYPE_ETXT are unique, but CATEGORY_ETXT is not unique.
-                    item.notificationTypeEtxt = recallResponse.ResultSet[0].Where(item => item.Name == "NOTIFICATION_TYPE_ETXT").First().Value.Literal;
-                    item.notificationTypeFtxt = recallResponse.ResultSet[0].Where(item => item.Name == "NOTIFICATION_TYPE_FTXT").First().Value.Literal;                    
+                    item.NotificationTypeEtxt = recallResponse.ResultSet[0].Where(item => item.Name == "NOTIFICATION_TYPE_ETXT").First().Value.Literal;
+                    item.NotificationTypeFtxt = recallResponse.ResultSet[0].Where(item => item.Name == "NOTIFICATION_TYPE_FTXT").First().Value.Literal;                    
                 }
 
                 return item;
