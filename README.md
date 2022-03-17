@@ -11,11 +11,9 @@ It consists of a front-end app and 4 back-end web apis.
   - API 2 is written in  by Katya Batura.
 
   - API 3 is written in Java by Peter Londry.
-<<<<<<< HEAD
 
   - API 4 is written in .net 6 by Wu Ding.  
 =======
->>>>>>> dfd7b5d5650b4473f1e617da6875fa34df593521
 
   - API 4 is written in .net 6 by Wu Ding.  
 
