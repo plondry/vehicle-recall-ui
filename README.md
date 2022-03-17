@@ -6,13 +6,13 @@ It consists of a front-end app and 4 back-end web apis.
 
 - 4 back-end web apis are written in different languages/framework (they run independently):
 
-  - API1 is written in Javascript by Mubarak Oseni.
+  - API 1 is written in Javascript by Mubarak Oseni.
 
-  - API2 is written in  by Katya Batura.
+  - API 2 is written in  by Katya Batura.
 
-  - API3 is written in Java by Peter Londry.
+  - API 3 is written in Java by Peter Londry.
 
-  - API4 is written in .net 6 by Wu Ding.  
+  - API 4 is written in .net 6 by Wu Ding.  
 
 
 
@@ -76,7 +76,7 @@ For more information on API 3, see [API 3's README](https://github.com/plondry/v
   4. Press F5 do run the project "TCVrdWebApi". If you see a browser is launched with http://localhost:3004/swagger/index.html, api4 webapi is running!
 
 
-# API1 Introduction
+# API 1 Introduction
 API1 is written in Javascript and located in apis\API1.
 
 ## Endpoints Definiton:
@@ -90,9 +90,9 @@ GetByValue retrieval endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?
 
 
 
-# API2 Introduction
+# API 2 Introduction
 
-# API3 Introduction
+# API 3 Introduction
 API3 is written in Java and located in apis\API3.
 
 ## Endpoints Definiton:
@@ -103,7 +103,7 @@ GetAll endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
 GetByValue retrieval endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value=<value>
 
-# API4 Introduction
+# API 4 Introduction
 
 API4 is written in .net 6 and located in apis\API4.
 
