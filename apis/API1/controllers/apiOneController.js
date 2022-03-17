@@ -33,6 +33,12 @@ exports.getAllVehiclesData = async (req, res) => {
 // A GET request to retrieve a single record if provided with a record identifier
 exports.getVehicleData = async (req, res) => {
   try {
+       
+    const features = new APIFeatures(ApiOne.find(), req.query)
+      .filter()
+      .sort()
+      .limitFields()
+      .paginate();
       
     const ResultSet = await ApiOne.findById(req.params.id);
   
@@ -57,9 +63,9 @@ exports.createVehicleData = async (req, res) => {
 
     res.status(201).json({
       status: 'success',
-      data: {
-        tour: ResultSet
-      }
+      results: ResultSet.length,
+      ResultSet
+      
     });
   } catch (err) {
     res.status(400).json({

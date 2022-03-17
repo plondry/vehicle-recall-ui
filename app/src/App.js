@@ -63,6 +63,7 @@ class App extends Component {
                         name="jsonfile"
                         type="file"
                         onChange={(e) => this.loadFile(e)}
+                        onClick={(e) => e.target.value=''}
                     />
                   </CardBody>
                 </Card>

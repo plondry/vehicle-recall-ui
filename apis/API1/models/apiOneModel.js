@@ -15,7 +15,7 @@ const apiOneScheme = new mongoose.Schema({
     required: true
 
   },
-  _modelName: {
+  modelName: {
     type: String,
     required: true
 

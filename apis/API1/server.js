@@ -25,6 +25,8 @@ const app = require('./app');
     useFindAndModify: false
   })
   .then(() => console.log('DB connection successful!'));
+
+  mongoose.set('disableReservedWordsWarning', true)
   
 app.use(cors(corsOptions)) 
   const port = process.env.PORT || 3001;

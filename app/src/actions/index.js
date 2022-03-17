@@ -4,7 +4,11 @@ import {
     searchVehicleRecallsWithURL
 } from "../api";
 
+import api1file from "../apis/API1/api1.json";
+
+
 export function fetchVehicleRecallsFromFile(file) {
+    console.log(file)
 
     return dispatch => {
         dispatch(setLoadingFlag())
@@ -34,6 +38,7 @@ export function unsetLoadingFlag() {
     };
 }
 export function fetchVehicleRecallsSucceeded(data) {
+    
     return {
         type: 'SUCCESS_GET_VEHICLE_RECALLS',
         payload: data,
@@ -41,6 +46,9 @@ export function fetchVehicleRecallsSucceeded(data) {
 }
 
 export function postVehicleRecalls(baseURL, data) {
+     if (baseURL=="http://localhost:3001/v1/api/vehicle-recalls"){
+        data=api1file
+    }
     return dispatch => {
         dispatch(setLoadingFlag())
 

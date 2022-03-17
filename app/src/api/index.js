@@ -6,6 +6,9 @@ const client = axios.create({
     baseURL: API_BASE_URL,
     headers: {
         'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin ": "*",
+        "Access-Control-Allow-Origin":"http://localhost:3001/v1/api/vehicle-recalls"
+
     },
 });
 
@@ -23,8 +26,11 @@ export function getVehicleRecallsWithURL(baseURL) {
 export function searchVehicleRecallsWithURL(baseURL, searchValue) {
     if (baseURL=="http://localhost:3001/v1/api/vehicle-recalls"){
         var searchparam="/?manufacturer_recall_no_txt="
-        return axios.get(baseURL+searchparam+searchValue);
+        console.log("🚀 ~ file: index.js ~ line 29 ~ searchVehicleRecallsWithURL ~ searchparam", searchparam)
     }
-    return axios.get(baseURL+"/search?value="+searchValue);
- 
+    else{
+         var searchparam="/search?value="
+
+    }
+    return axios.get(baseURL+searchparam+searchValue);
 }
