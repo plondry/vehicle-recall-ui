@@ -8,7 +8,7 @@ It consists of a front-end app and 4 back-end web apis.
 
   - API 1 is written in Javascript by Mubarak Oseni.
 
-  - API 2 is written in  by Katya Batura.
+  - (Not Available) API 2
 
   - API 3 is written in Java by Peter Londry.
 
@@ -58,8 +58,6 @@ vehicle-recall-ui/apis/API1/node_modules/mongoose/lib/schema.js
 and comment out // "reserved.modelName ="
 ```
 
-### Starting API 2
-
 ### Starting API 3 
 API 3 is a Java Spring Boot application built using Gradle. 
 
@@ -93,11 +91,6 @@ Post endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 GetAll endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
 GetByValue retrieval endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt={value}
-  
-
-
-
-# API 2 Introduction
 
 # API 3 Introduction
 API3 is written in Java and located in apis\API3.
