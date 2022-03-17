@@ -8,7 +8,7 @@ It consists of a front-end app and 4 back-end web apis.
 
   - API 1 is written in Javascript by Mubarak Oseni.
 
-  - API 2 is written in  by Katya Batura.
+  - (Not Available) API 2
 
   - API 3 is written in Java by Peter Londry.
 
@@ -19,22 +19,22 @@ Recommended browsers are Chrome, Microsoft Edge, and Firefox since our app is fu
 
 ## Running Locally
 1. Clone repository
-```
-git clone https://github.com/plondry/vehicle-recall-ui.git
-cd vehicle-recall-ui
+```shell
+> git clone https://github.com/plondry/vehicle-recall-ui.git
+> cd vehicle-recall-ui
 ```
 2.  Start Frontend and APIs - see below.
 
 ### Starting the Frontend App
 1. Install NodeJS (https://nodejs.org/en/)
 2.  Run the following commands:
-```
-git clone https://github.com/plondry/vehicle-recall-ui.git
-cd vehicle-recall-ui
-npm install
-cd app
-npm install
-npm start
+```shell
+> git clone https://github.com/plondry/vehicle-recall-ui.git
+> cd vehicle-recall-ui
+vehicle-recall-ui> npm install
+vehicle-recall-ui> cd app
+vehicle-recall-ui\app> npm install
+vehicle-recall-ui\app> npm start
 ```
 
 ### Starting API 1
@@ -51,9 +51,12 @@ npm install
 
 #Start API1 Server
 node server.js
-```
 
-### Starting API 2
+In case of error : throw new Error('`' + path + '` may not be used as a schema pathname');
+This error can be fixed by going to the scheme.js file at 
+vehicle-recall-ui/apis/API1/node_modules/mongoose/lib/schema.js 
+and comment out // "reserved.modelName ="
+```
 
 ### Starting API 3 
 API 3 is a Java Spring Boot application built using Gradle. 
@@ -62,10 +65,10 @@ You must have **Java 11 JDK** installed on your
   computer. (https://www.oracle.com/java/technologies/javase/jdk11-archive-downloads.html) 
 
 You can build a jar file and run it from the command line:
-```
-cd api/API3/
-gradlew build
-java -jar ./build/libs/vrd-api-1.0.0.jar
+```shell
+vehicle-recall-ui> cd apis/API3/
+vehicle-recall-ui\apis\API3> gradlew build
+vehicle-recall-ui\apis\API3> java -jar ./build/libs/vrd-api-1.0.0.jar
 ```
 For more information on API 3, see [API 3's README](https://github.com/plondry/vehicle-recall-ui/tree/main/apis/API3)
 ### Starting API 4
@@ -88,11 +91,6 @@ Post endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 GetAll endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
 GetByValue retrieval endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt={value}
-  
-
-
-
-# API 2 Introduction
 
 # API 3 Introduction
 API3 is written in Java and located in apis\API3.
@@ -123,3 +121,18 @@ GetByValue retrieval endpoint is: http://localhost:3004/v1/api/vehicle-recalls/s
 # Front End App Introduction
 
 The front end app is written in React.
+
+To use the App, once it's started, open a browser and go to http://localhost:3000
+
+1.  Load the initial JSON file using the file selector at the top of the page.
+
+![](img/Step1.png)
+
+- The JSON will load and can be viewed in the JSON panel at the bottom of the screen.  This panel will let you download the current JSON at any point in the process.  You can then use the cached JSON or reload the JSON file using step 1 above.
+  ![](img/JSONPanel.png)
+
+2. For each of the API Steps, you can click on the following buttons
+  * `Add Field` - This will invoke the `POST` request on the API, passing in the cached JSON in the web app (in the JSON panel) - The results of this service request will be presented in the JSON Panel at the bottom of the page.
+  * `Load All` - This will invoke the `GET` request on the API, and refresh the web app JSON cache (in the JSON panel)
+  * `Search` - This will invoke the `GET` search request on the API and load the results in the `Search Results` panel at the bottom of the screen.  You can also download this JSON file.
+   ![](img/APIPanel.png)
