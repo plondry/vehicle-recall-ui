@@ -139,7 +139,7 @@ To use the App, once it's started, open a browser and go to http://localhost:300
   ![](img/JSONPanel.png)
 
 2. For each of the API Steps, you can click on the following buttons
-  1. `Add Field` - This will invoke the `POST` request on the API, passing in the cached JSON in the web app (in the JSON panel) - The results of this service request will be presented in the JSON Panel at the bottom of the page.
-  2. `Load All` - This will invoke the `GET` request on the API, and refresh the web app JSON cache (in the JSON panel)
-  3. `Search` - This will invoke the `GET` search request on the API and load the results in the `Search Results` panel at the bottom of the screen.  You can also download this JSON file.
-     ![](img/APIPanel.png)
+  * `Add Field` - This will invoke the `POST` request on the API, passing in the cached JSON in the web app (in the JSON panel) - The results of this service request will be presented in the JSON Panel at the bottom of the page.
+  * `Load All` - This will invoke the `GET` request on the API, and refresh the web app JSON cache (in the JSON panel)
+  * `Search` - This will invoke the `GET` search request on the API and load the results in the `Search Results` panel at the bottom of the screen.  You can also download this JSON file.
+   ![](img/APIPanel.png)
