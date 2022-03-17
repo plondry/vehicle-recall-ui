@@ -13,9 +13,7 @@ It consists of a front-end app and 4 back-end web apis.
   - API 3 is written in Java by Peter Londry.
 
   - API 4 is written in .net 6 by Wu Ding.  
-=======
 
-  - API 4 is written in .net 6 by Wu Ding.  
 
 Recommended browsers are Chrome, Microsoft Edge, and Firefox since our app is fully tested in these browsers.
 
