@@ -51,6 +51,11 @@ npm install
 
 #Start API1 Server
 node server.js
+
+In case of error : throw new Error('`' + path + '` may not be used as a schema pathname');
+This error can be fixed by going to the scheme.js file at 
+vehicle-recall-ui/apis/API1/node_modules/mongoose/lib/schema.js 
+and comment out // "reserved.modelName ="
 ```
 
 ### Starting API 2
