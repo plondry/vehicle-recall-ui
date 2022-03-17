@@ -33,7 +33,7 @@ def getVehicleRecallStartData():
             if "2017464" not in recallNumber:
                 response = requests.request("GET", 'https://data.tc.gc.ca/v1.3/api/eng/vehicle-recall-database/recall-summary/recall-number/'+recallNumber+'?format=json', verify = False)
                 data = response.json()
-                manufacturer_recall_no_txt = json.dumps(data["ResultSet"][0][1]["Value"]["Literal"], indent=4)
+                manufacturerRecallNoTxt = json.dumps(data["ResultSet"][0][1]["Value"]["Literal"], indent=4)
                 categoryEtxt= None
                 categoryFtxt=None
                 systemTypeEtxt=None
@@ -43,10 +43,10 @@ def getVehicleRecallStartData():
 
 
 
-                str_manufacturer_recall_no_txt=manufacturer_recall_no_txt.replace('"','')
+                str_manufacturerRecallNoTxt=manufacturerRecallNoTxt.replace('"','')
 
 
-                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"modelName":modelName,"recallYear":recallYear,"manufacturer_recall_no_txt":str_manufacturer_recall_no_txt,
+                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"modelName":modelName,"recallYear":recallYear,"manufacturerRecallNoTxt":str_manufacturerRecallNoTxt,
                 "categoryEtxt":categoryEtxt,"categoryFtxt":categoryFtxt,"systemTypeEtxt":systemTypeEtxt,"systemTypeFtxt":systemTypeFtxt,"notificationTypeEtxt":notificationTypeEtxt,"notificationTypeFtxt":notificationTypeFtxt}
                 print(data)
                 r = requests.post(APIONE_ENDPOINT, json=data,  headers=headers)
@@ -54,8 +54,8 @@ def getVehicleRecallStartData():
             else:
                 #for data that does no exist
                 #set mstr_manufacturer_recall_no_txt to "DNE"-DOES NOT EXISIT
-                str_manufacturer_recall_no_txt=None
-                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"modelName":modelName,"recallYear":recallYear,"manufacturer_recall_no_txt":str_manufacturer_recall_no_txt,
+                str_manufacturerRecallNoTxt=None
+                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"modelName":modelName,"recallYear":recallYear,"manufacturerRecallNoTxt":str_manufacturerRecallNoTxt,
                 "categoryEtxt":categoryEtxt,"categoryFtxt":categoryFtxt,"systemTypeEtxt":systemTypeEtxt,"systemTypeFtxt":systemTypeFtxt,"notificationTypeEtxt":notificationTypeEtxt,"notificationTypeFtxt":notificationTypeFtxt}
                 print(data)
                 r = requests.post(APIONE_ENDPOINT, json=data,  headers=headers)

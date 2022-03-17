@@ -24,7 +24,7 @@ const apiOneScheme = new mongoose.Schema({
     type: String,
     required: true
   },
-  manufacturer_recall_no_txt: {
+  manufacturerRecallNoTxt: {
     type: String,
   },
   categoryEtxt: {
