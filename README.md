@@ -85,7 +85,7 @@ Post endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
 GetAll endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
-GetByValue retrieval endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
+GetByValue retrieval endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt={value}
   
 
 
@@ -101,7 +101,7 @@ Post endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
 GetAll endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
-GetByValue retrieval endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value=<value>
+GetByValue retrieval endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value={value}
 
 # API 4 Introduction
 
@@ -115,7 +115,7 @@ Post endpoint is: http://localhost:3004/v1/api/vehicle-recalls
 
 GetAll endpoint is: http://localhost:3004/v1/api/vehicle-recalls
 
-GetByValue retrieval endpoint is: http://localhost:3004/v1/api/vehicle-recalls/search?value=<value>
+GetByValue retrieval endpoint is: http://localhost:3004/v1/api/vehicle-recalls/search?value={value}
 
 
 # Front End App Introduction
