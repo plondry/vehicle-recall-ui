@@ -76,48 +76,48 @@ For more information on API 3, see [API 3's README](https://github.com/plondry/v
   4. Press F5 do run the project "TCVrdWebApi". If you see a browser is launched with http://localhost:3004/swagger/index.html, api4 webapi is running!
 
 
-# API1
+# API1 Introduction
 API1 is written in Javascript and located in apis\API1.
 
-## Endpoints definiton:
+## Endpoints Definiton:
 
-Post Endpoint is: http://localhost:3001/v1/api/vehicle-recalls
+Post endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
-GetAll Endpoint is: http://localhost:3001/v1/api/vehicle-recalls
+GetAll endpoint is: http://localhost:3001/v1/api/vehicle-recalls
 
-GetByValue retrieval Endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
+GetByValue retrieval endpoint is: http://localhost:3001/v1/api/vehicle-recalls/?manufacturer_recall_no_txt=<value>
   
 
 
 
-# API2
+# API2 Introduction
 
-# API3
+# API3 Introduction
 API3 is written in Java and located in apis\API3.
 
-## Endpoints definiton:
+## Endpoints Definiton:
 
-Post Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
+Post endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
-GetAll Endpoint is: http://localhost:3003/v1/api/vehicle-recalls
+GetAll endpoint is: http://localhost:3003/v1/api/vehicle-recalls
 
-GetByValue retrieval Endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value=<value>
+GetByValue retrieval endpoint is: http://localhost:3003/v1/api/vehicle-recalls/search?value=<value>
 
-# API4
+# API4 Introduction
 
 API4 is written in .net 6 and located in apis\API4.
 
 The controller file is at .\apis\API4\TCVrdWebApi\TCVrdWebApi\Controllers\VrdProcessorApi4Controller.cs.
 
-## Endpoints definiton:
+## Endpoints Definiton:
 
-Post Endpoint is: http://localhost:3004/v1/api/vehicle-recalls
+Post endpoint is: http://localhost:3004/v1/api/vehicle-recalls
 
-GetAll Endpoint is: http://localhost:3004/v1/api/vehicle-recalls
+GetAll endpoint is: http://localhost:3004/v1/api/vehicle-recalls
 
-GetByValue retrieval Endpoint is: http://localhost:3004/v1/api/vehicle-recalls/search?value=<value>
+GetByValue retrieval endpoint is: http://localhost:3004/v1/api/vehicle-recalls/search?value=<value>
 
 
-# Front end app
+# Front End App Introduction
 
 The front end app is written in React.
