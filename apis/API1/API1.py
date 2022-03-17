@@ -46,7 +46,7 @@ def getVehicleRecallStartData():
                 str_manufacturer_recall_no_txt=manufacturer_recall_no_txt.replace('"','')
 
 
-                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"_modelName":modelName,"recallYear":recallYear,"manufacturer_recall_no_txt":str_manufacturer_recall_no_txt,
+                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"modelName":modelName,"recallYear":recallYear,"manufacturer_recall_no_txt":str_manufacturer_recall_no_txt,
                 "categoryEtxt":categoryEtxt,"categoryFtxt":categoryFtxt,"systemTypeEtxt":systemTypeEtxt,"systemTypeFtxt":systemTypeFtxt,"notificationTypeEtxt":notificationTypeEtxt,"notificationTypeFtxt":notificationTypeFtxt}
                 print(data)
                 r = requests.post(APIONE_ENDPOINT, json=data,  headers=headers)
@@ -55,7 +55,7 @@ def getVehicleRecallStartData():
                 #for data that does no exist
                 #set mstr_manufacturer_recall_no_txt to "DNE"-DOES NOT EXISIT
                 str_manufacturer_recall_no_txt=None
-                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"_modelName":modelName,"recallYear":recallYear,"manufacturer_recall_no_txt":str_manufacturer_recall_no_txt,
+                data={"recallNumber":recallNumber,"manufactureName":manufactureName,"makeName":makeName,"modelName":modelName,"recallYear":recallYear,"manufacturer_recall_no_txt":str_manufacturer_recall_no_txt,
                 "categoryEtxt":categoryEtxt,"categoryFtxt":categoryFtxt,"systemTypeEtxt":systemTypeEtxt,"systemTypeFtxt":systemTypeFtxt,"notificationTypeEtxt":notificationTypeEtxt,"notificationTypeFtxt":notificationTypeFtxt}
                 print(data)
                 r = requests.post(APIONE_ENDPOINT, json=data,  headers=headers)
